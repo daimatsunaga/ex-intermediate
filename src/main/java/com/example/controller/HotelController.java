@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.domain.Hotel;
 import com.example.service.HotelService;
 
+/**
+ * ホテル検索を行う
+ * @author matsunagadai
+ *
+ */
 @Controller
 @RequestMapping("/hotel")
 public class HotelController {
