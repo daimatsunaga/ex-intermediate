@@ -31,8 +31,8 @@ public class ClothRepository {
 	 * @param color
 	 * @return 検索された衣類情報
 	 */
-	public List<Cloth> search(String gender, String color) {
-		String sql = "SELECT * FROM clothes WHERE gender = :gender AND color = :color";
+	public List<Cloth> search(Integer gender, String color) {
+		String sql = "SELECT * FROM clothes WHERE gender = :gender AND color = :color;";
 		SqlParameterSource param = new MapSqlParameterSource().addValue("gender", gender).addValue("color", color);
 		List<Cloth> clothList = template.query(sql, param, CLOTH_ROW_MAPPER);
 		
