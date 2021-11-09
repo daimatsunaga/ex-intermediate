@@ -11,7 +11,11 @@ import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
 import com.example.domain.Cloth;
-
+/**
+ * 衣類情報検索のためのリポジトリクラス
+ * @author matsunagadai
+ *
+ */
 @Repository
 public class ClothRepository {
 
@@ -21,6 +25,12 @@ public class ClothRepository {
 	private static RowMapper<Cloth> CLOTH_ROW_MAPPER 
 	= new BeanPropertyRowMapper<>(Cloth.class);
 	
+	/**
+	 * 性別と色による衣類検索
+	 * @param gender
+	 * @param color
+	 * @return 検索された衣類情報
+	 */
 	public List<Cloth> search(String gender, String color) {
 		String sql = "SELECT * FROM clothes WHERE gender = :gender AND color = :color";
 		SqlParameterSource param = new MapSqlParameterSource().addValue("gender", gender).addValue("color", color);
