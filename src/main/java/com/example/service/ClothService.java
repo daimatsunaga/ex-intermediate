@@ -24,7 +24,7 @@ public class ClothService {
 	 * @param color
 	 * @return 検索された衣類情報
 	 */
-	public List<Cloth> search(String gender, String color) {
+	public List<Cloth> search(Integer gender, String color) {
 		List<Cloth> clothList = clothRepository.search(gender, color);
 		return clothList;
 	}
