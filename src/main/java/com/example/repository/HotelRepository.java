@@ -33,7 +33,11 @@ public class HotelRepository {
 		hotel.setParking(rs.getString("parking"));
 		return hotel;
 	};
-	
+	/**
+	 * priceによるホテル検索
+	 * @param price
+	 * @return ホテルのリスト一覧
+	 */
 	public List<Hotel> search(Integer price) {
 		if (price == null) {
 			String sql = "SELECT * FROM hotels;";
